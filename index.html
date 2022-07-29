@@ -11,13 +11,25 @@
   </div>
   
 
- <script src='./vue.js'></script> 
+ <script src='vue.js'></script> 
  <script>
 new Vue({
   el: '#app',
   data: {
     str: 'hello',
     way: '搞这么厉害干嘛'
+  },
+  beforeCreate() {
+    console.log('beforeCreate' , this.$el, this.$data)
+  },
+  created() {
+    console.log('created', this.$el, this.$data)
+  },
+  beforeMount() {
+    console.log('beforeMount', this.$el, this.$data)
+  },
+  mounted() {
+    console.log('mounted', this.$el, this.$data)
   },
 })
  </script>
