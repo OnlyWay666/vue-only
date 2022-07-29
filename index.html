@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <title>Vue-Only</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1> {{str}}</h1>
+    {{str}}
+    <p> {{way}}</p>
+  </div>
+  
+
+ <script src='./vue.js'></script> 
+ <script>
+new Vue({
+  el: '#app',
+  data: {
+    str: 'hello',
+    way: '搞这么厉害干嘛'
+  },
+})
+ </script>
+</body>
+</html>
