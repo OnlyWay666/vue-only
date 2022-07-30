@@ -52,11 +52,9 @@ class Vue {
         }, 
         set( val){
           value = val;
-          console.log('ddd')
           if( that.$watchEvent[key]){
             that.$watchEvent[key].forEach((item,index)=>{
-              console.log('eee')
-              item.updata;
+              item.updata();
             })
           }
         }
@@ -94,11 +92,9 @@ class Vue {
             let watcher = new Watcher(this, vmKey,item,'textContent')
             if(this.$watchEvent[vmKey]){
               this.$watchEvent[vmKey].push(watcher);
-              console.log('aaaa')
             }else{
               this.$watchEvent[vmKey] = [];
               this.$watchEvent[vmKey].push(watcher);
-              console.log('bbb')
             }
           }
           
