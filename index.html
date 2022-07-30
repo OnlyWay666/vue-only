@@ -5,10 +5,11 @@
 <body>
 
   <div id="app">
-    <h1> {{str}} </h1>
+    <h1> {{username}} </h1>
     {{str}}
     <p> {{way}}</p>
     <button @click="btn">Click</button>
+    <input type="text" v-model="username">
   </div>
   
 
@@ -18,7 +19,8 @@ new Vue({
   el: '#app',
   data: {
     str: 'hello',
-    way: '搞这么厉害干嘛'
+    way: '搞这么厉害干嘛',
+    username: ''
   },
   beforeCreate() {
     console.log('beforeCreate' , this.$el, this.$data)

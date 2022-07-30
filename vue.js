@@ -75,6 +75,17 @@ class Vue {
           });
         }
 
+         // 判断元素节点是否绑定了v-model
+         if (item.hasAttribute("v-model")){
+            let vmKey = item.getAttribute("v-model").trim();
+            if( this.hasOwnProperty(vmKey)){
+              item.value = this[vmKey]
+            }
+            item.addEventListener('input',(event)=>{
+              this[vmKey] = item.value  
+            })
+         }
+
         if (item.childNodes.length > 0) {
           this.compile(item);
         }
